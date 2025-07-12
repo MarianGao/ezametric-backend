@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ['dotnet-sdk_7']
+
+[phases.build]
+cmds = [
+  'dotnet restore',
+  'dotnet publish -c Release -o out --no-restore'
+]
+
+[phases.start]
+cmd = 'dotnet out/ezametric_backend.dll'
